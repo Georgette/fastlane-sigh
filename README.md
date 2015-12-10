@@ -37,22 +37,19 @@ sigh([options],[callback])
 Accepts options as an object; see tables below for a list of both runtime options, and sigh options.
 
 |Sigh Options |Example|Description|Command Executed|
-|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| identifier  | { identifier: bundleIndentifier } | sets bundle identifier  | -a {bundleIndentifier}
-| output      | { output: outputDirectoryPath } | generates the profile in a specific directory | -o {outputDirectoryPath}                                                                                                                  |
-| user (string)       |  { user:username } | sets username | -u {user}                                                                                                                                                                               |
-| profile:'adhoc' | { profile:'adhoc' } | generate an Ad Hoc profile instead of an App Store profile | --adhoc
+|-------------|-------|-----------|----------------|
+| identifier  | { identifier: bundleIndentifier } | sets bundle identifier  | -a {bundleIndentifier} |
+| output      | { output: outputDirectoryPath } | generates the profile in a specific directory | -o {outputDirectoryPath} |                                                                                                                  | user (string)       |  { user:username } | sets username | -u {user} |                                                                                                                                                                           | profile:'adhoc' | { profile:'adhoc' } | generate an Ad Hoc profile instead of an App Store profile | --adhoc |
 | profile:'development' | { profile:'development' } | generate an development profile instead of an App Store profile | --development |
-| downloadAll (boolean) | { downloadAll:true } | downloads all provisioning profiles                                                                                                                                                                    | --download_all
-| force (boolean)       | { force:true }  | force the provisioning profile to be renewed regardless of its state. Provides a profile with the maximum lifetime and also adds all available devices to this profile. | --force                                      |
-|repair (boolean) | { repair:true } | automatically repair all your existing provisioning profiles which are expired or just invalid | repair
+| downloadAll (boolean) | { downloadAll:true } | downloads all provisioning profiles                                                                                                                                                                    | --download_all |
+| force (boolean)       | { force:true }  | force the provisioning profile to be renewed regardless of its state. Provides a profile with the maximum lifetime and also adds all available devices to this profile. | --force |                              |repair (boolean) | { repair:true } | automatically repair all your existing provisioning profiles which are expired or just invalid | repair |
 
 
 |Runtime Options |Example|Description|
-|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|----------------|-------|-----------|
 |timeout (number)| { timeout:0 } | specify when to exit execution in case of error |
-|password (string)| {password:''} | app store password for signing
-|path (string)| {path:'/'} | path of directory where sigh executes
+|password (string)| {password:''} | app store password for signing|
+|path (string)| {path:'/'} | path of directory where sigh executes|
 
 ## install
 
