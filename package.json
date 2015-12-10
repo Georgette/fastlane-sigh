@@ -29,6 +29,10 @@
     "snazzy": "~2.0.1",
     "tape": "~4.2.1"
   },
+  "enginesStrict": true,
+  "engines": {
+    "node": ">=4.0"
+  },
   "scripts": {
     "test": "npm run -s faucet && npm run -s lint && npm run -s check-cover",
     "test-nocover": "npm run -s faucet-nocover && npm run -s lint",
