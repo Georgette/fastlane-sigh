@@ -1,0 +1,45 @@
+{
+  "name": "fastlane-sigh",
+  "version": "0.0.0",
+  "description": "node wrapper for ruby fastlane sigh module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Georgette/fastlane-sigh.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Georgette/fastlane-sigh/issues"
+  },
+  "homepage": "https://github.com/Georgette/fastlane-sigh",
+  "author": {
+    "name": "Gege Pincin",
+    "email": "gege@pincin.com",
+    "url": "http://gege.pincin.com/"
+  },
+  "contributors": [],
+  "devDependencies": {
+    "@jasonpincin/standard": "~5.0.0-8",
+    "faucet": "0.0.1",
+    "istanbul": "~0.4.0",
+    "opn": "~1.0.2",
+    "proxyquire": "^1.7.3",
+    "sinon": "^1.17.2",
+    "snazzy": "~2.0.1",
+    "tape": "~4.2.1"
+  },
+  "scripts": {
+    "test": "npm run -s faucet && npm run -s lint && npm run -s check-cover",
+    "test-nocover": "npm run -s faucet-nocover && npm run -s lint",
+    "travis-test": "npm run -s tap && ((cat coverage/lcov.info | coveralls) || exit 0)",
+    "faucet": "istanbul cover --report lcov --print none -- tape test/*.js | faucet",
+    "faucet-nocover": "tape test/**/*.js | faucet",
+    "tap": "istanbul cover --report lcov --print none -- tape test/*.js",
+    "tap-nocover": "tape test/**/*.js",
+    "lint": "standard | snazzy",
+    "check-cover": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100 2>&1 | grep ERROR: ; (test ${PIPESTATUS[0]} -eq 0) || (istanbul report text; exit 1)",
+    "view-cover": "istanbul report text",
+    "open-cover": "open coverage/lcov-report/index.html"
+  }
+}
