@@ -30,9 +30,12 @@ sigh({
 
 ## api
 
+
+```javascript
 var sigh = require('fastlane-sigh')
 
-sigh([options],[callback])
+```
+# sigh([options],[callback])
 
 Accepts options as an object; see tables below for a list of both runtime options, and sigh options.
 
