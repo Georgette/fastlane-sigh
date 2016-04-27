@@ -44,8 +44,19 @@ Accepts options as an object; see tables below for a list of both runtime option
 | identifier  | { identifier: bundleIndentifier } | sets bundle identifier  | -a {bundleIndentifier} |
 | output      | { output: outputDirectoryPath } | generates the profile in a specific directory | -o {outputDirectoryPath} |                                                                                                                  | user (string)       |  { user:username } | sets username | -u {user} |                                                                                                                                                                           | profile:'adhoc' | { profile:'adhoc' } | generate an Ad Hoc profile instead of an App Store profile | --adhoc |
 | profile:'development' | { profile:'development' } | generate an development profile instead of an App Store profile | --development |
-| downloadAll (boolean) | { downloadAll:true } | downloads all provisioning profiles                                                                                                                                                                    | --download_all |
-| force (boolean)       | { force:true }  | force the provisioning profile to be renewed regardless of its state. Provides a profile with the maximum lifetime and also adds all available devices to this profile. | --force |                              |repair (boolean) | { repair:true } | automatically repair all your existing provisioning profiles which are expired or just invalid | repair |
+| downloadAll (boolean) | { downloadAll:true } | downloads all provisioning profiles                                                                                                                                                               | --download_all |
+| force (boolean)       | { force:true }  | force the provisioning profile to be renewed regardless of its state. Provides a profile with the maximum lifetime and also adds all available devices to this profile. | --force |
+| repair (boolean) | { repair:true } | automatically repair all your existing provisioning profiles which are expired or just invalid | repair |
+| skip_install (boolean) | { skip_install:true } | By default, the certificate will be added on your local machine. Setting this flag will skip this action | --skip_install |
+| skip_certificate_verification (boolean) | { skip_certificate_verification:true } | Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine | --skip_certificate_verification |
+| skip_fetch_profiles (boolean) | { skip_fetch_profiles:true } | Skips the verification of existing profiles which is useful if you have thousands of profiles | --skip_fetch_profiles |
+| team_id | { team_id: team_id } | The ID of your team if you're in multiple teams | --team_id {team_id} |
+| team_name | { team_name: team_name } | The name of your team if you're in multiple teams | --team_name {team_name} |
+| provisioning_name | { provisioning_name: provisioning_name } |  The name of the profile that is used on the Apple Developer Portal | --provisioning_name {provisioning_name} |
+| ignore_profiles_with_different_name (boolean) | { ignore_profiles_with_different_name:true } | Use in combination with `provisioning_name` - when true only profiles matching this exact name will be downloaded | --ignore_profiles_with_different_name |
+| cert_id | { cert_id: cert_id } | The ID of the code signing certificate to use (e.g. 78ADL6LVAA) | --cert_id {cert_id} |
+| cert_owner_name  | { cert_owner_name: cert_owner_name } | The certificate name to use for new profiles, or to renew with. (e.g. "Felix Krause") | --cert_owner_name {cert_owner_name} |
+| filename  | { filename: filename } | Filename to use for the generated provisioning profile (must include .mobileprovision) | --filename {filename} |
 
 
 |Runtime Options |Example|Description|

@@ -84,6 +84,86 @@ test('accepts profile repair option', (t) => {
     })
 })
 
+test('accepts an option of skip_install', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ skip_install: true }, () => {
+        t.ok(exec.calledWith('sigh --skip_install'), 'sigh called with --skip_install')
+    })
+})
+
+test('accepts an option of skip_certificate_verification', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ skip_certificate_verification: true }, () => {
+        t.ok(exec.calledWith('sigh --skip_certificate_verification'), 'sigh called with --skip_certificate_verification')
+    })
+})
+
+test('accepts an option of skip_fetch_profiles', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ skip_fetch_profiles: true }, () => {
+        t.ok(exec.calledWith('sigh --skip_fetch_profiles'), 'sigh called with --skip_fetch_profiles')
+    })
+})
+
+test('accepts an option of team_id', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ team_id: 1 }, () => {
+        t.ok(exec.calledWith('sigh --team_id 1'), 'sigh called with --team_id')
+    })
+})
+
+test('accepts an option of team_name', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ team_name: 'a' }, () => {
+        t.ok(exec.calledWith('sigh --team_name a'), 'sigh called with --team_name')
+    })
+})
+
+test('accepts an option of provisioning_name', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ provisioning_name: 'a' }, () => {
+        t.ok(exec.calledWith('sigh --provisioning_name a'), 'sigh called with --provisioning_name')
+    })
+})
+
+test('accepts an option of ignore_profiles_with_different_name', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ ignore_profiles_with_different_name: true }, () => {
+        t.ok(exec.calledWith('sigh --ignore_profiles_with_different_name'), 'sigh called with --ignore_profiles_with_different_name')
+    })
+})
+
+test('accepts an option of cert_id', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ cert_id: 1 }, () => {
+        t.ok(exec.calledWith('sigh --cert_id 1'), 'sigh called with --cert_id')
+    })
+})
+
+test('accepts an option of cert_owner_name', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ cert_owner_name: 'a' }, () => {
+        t.ok(exec.calledWith('sigh --cert_owner_name a'), 'sigh called with --cert_owner_name')
+    })
+})
+
+test('accepts an option of filename', (t) => {
+    t.plan(1)
+    exec.reset()
+    sigh({ filename: 'a.mobileprovision' }, () => {
+        t.ok(exec.calledWith('sigh --filename a.mobileprovision'), 'sigh called with --filename')
+    })
+})
+
 test('accepts a runtime option of timeout', (t) => {
     t.plan(1)
     exec.reset()
