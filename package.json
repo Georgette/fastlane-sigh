@@ -1,6 +1,6 @@
 {
   "name": "fastlane-sigh",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "node wrapper for ruby fastlane sigh module",
   "main": "index.js",
   "repository": {
@@ -29,7 +29,7 @@
     "snazzy": "~2.0.1",
     "tape": "~4.2.1"
   },
-  "engineStrict" : true,
+  "engineStrict": true,
   "engines": {
     "node": ">=4.0"
   },
