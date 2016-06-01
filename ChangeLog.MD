@@ -1,2 +1,2 @@
-### v.1.1
+### v0.1
 * add more fastlane sigh options 
